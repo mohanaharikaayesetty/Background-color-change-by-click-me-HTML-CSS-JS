@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Background Color</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #colorInfo {
+            padding: 20px;
+            background-color: black;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #changeColorButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div id="colorInfo">BACKGROUND COLOR:RED</div>
+<button id="changeColorButton" onclick="changeBackgroundColor()">CLICK ME</button>
+
+<script>
+    const colors = ["red", "blue", "green", "yellow", "purple"];
+    let currentColorIndex = 0;
+
+    function changeBackgroundColor() {
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+        document.body.style.backgroundColor = colors[currentColorIndex];
+        document.getElementById('colorInfo').innerText = `Background Color: ${colors[currentColorIndex].charAt(0).toUpperCase() + colors[currentColorIndex].slice(1)}`;
+    }
+
+    // Set initial color
+    document.body.style.backgroundColor = colors[currentColorIndex];
+</script>
+
+</body>
+</html>
+
+
+
+    
